@@ -1,68 +1,44 @@
-# BAN 6003 Final Project Option 1: Movies and Audience Ratings
+# BAN5003 Final Project: Movie Runtime, Audience Sentiment, and Cast/Directors That Buck the Trend
 
-**BAN 6003: Data Management and Analytics Integration**  
-**Final Project GitHub Template**
+**BAN 5003: Data Management and Analytics Integration**  
+Timothy Mackay
 
 This repository contains the project starter notebook, curated data files, environment files, and output folders for the Movies final project option.
 
 Detailed project instructions, milestone requirements, due dates, rubric, report guide, and presentation guide are provided in Canvas/LMS.
 
-## Start Here
+## Disclaimer
+> **Note:** Initialized from Dr. Zu's BAN 6003 Movies starter template and adapted for BAN 5003. For brevity, this README will be updated prior to final submission to reflect additions, edits, and removals made across the project notebook.
 
-Open:
-
-```bash
-notebooks/movies_project_starter.ipynb
-```
-
-The notebook includes starter sections for:
-
-- loading the data
-- basic data profiling
-- Milestone 1
-- Milestone 2
-- Milestone 3
-- final interpretation, ethics, and recommendations
-
-The starter notebook is not a finished project. Replace placeholders, add your own code, explain your decisions, and build your own final report.
 
 ## Data
 
-The curated CSV files are in:
+The curated CSV files are stored in `data/`:
 
-```bash
-data/
-```
 
-This option uses movie metadata, user ratings, links, credits, and keywords. A common final ABT is one row per movie.
+This project uses movie metadata, user ratings, links, credits, and keywords. A common final ABT is one row per movie.
 
 Important: `ratings.csv` is rating-event-level, not movie-level. Aggregate ratings by `movieId` before merging ratings into a movie-level ABT.
 
 See `data/README.md` for row meaning, expected keys, and join guidance for each file.
 
+
 ## SQL with DuckDB
 
 The starter notebook uses DuckDB to run SQL directly on your pandas DataFrames and on the exported ABT CSV file, for example to check row counts, key uniqueness, and one aggregation against the pandas result. Milestone 2 requires at least one DuckDB query on your own project data. Using a hosted database such as Neon is optional and has no course guide.
 
+Similarly, postgres and DBeaver will be used for quick SQL Queries when doing so in VS Code would be a hinderence on the workflow in the notebook.
+
 ## Working Environment
 
-Recommended path:
+Path Used.
 
-1. Create your own repository from this template.
-2. Open the repository in GitHub Codespaces.
-3. Wait for dependencies to install automatically.
+1. Created repository from the starter template on GitHub and cloned locally via GitHub Desktop.
+2. Open the repository in VS Code.
+3. pip install -r requirements.txt
 4. Open the starter notebook.
 5. Run cells from top to bottom.
 
-Local path:
-
-```bash
-conda activate base
-python -m pip install -r requirements.txt
-code .
-```
-
-On the UTSA campus network Codespaces may not connect; use the local setup there (see the Canvas page on local setup).
 
 ## Expected Repository Organization
 
@@ -80,32 +56,18 @@ Your final repository must include these two files with these exact names:
 - `outputs/movies_final_abt.csv`: your final ABT
 - `outputs/movies_data_dictionary.csv`: the data dictionary for every column in your final ABT
 
-The last code cell of the starter notebook shows how to save them.
 
-## Export the HTML Report
+## Project Deliverables (BAN 5003)
 
-First, run **Restart & Run All** in your notebook and save it. Then, from the repository root, run:
+This repository contains the analytical artifacts for BAN 5003:
 
-```bash
-jupyter nbconvert --to html --output-dir reports notebooks/movies_project_starter.ipynb
-```
+- **Project Notebook:** `notebooks/movies_project_starter.ipynb`
+- **Final Analytical Base Table:** `outputs/movies_final_abt.csv`
+- **Data Dictionary:** `outputs/movies_data_dictionary.csv`
+- **Model Metrics & Outputs:** Saved in `outputs/`
+- **AI Prompt Logs:** Saved in `ai/prompts/`
+- **Executive Deck & Summary:** Saved in `reports/`
 
-This creates `reports/movies_project_starter.html`. If you renamed your notebook, use its file name in the command.
-
-## Final Submission
-
-Submit your GitHub repository link through Canvas.
-
-Your final repository should include:
-
-- final notebook `.ipynb`
-- HTML report exported from the notebook (in `reports/`)
-- final ABT: `outputs/movies_final_abt.csv`
-- data dictionary: `outputs/movies_data_dictionary.csv`
-- model metrics or structured analysis outputs
-- presentation or recording, according to Canvas instructions
-
-If your repository is private, make sure the instructor has access before submitting the link.
 
 ## Academic Integrity and AI Use
 
